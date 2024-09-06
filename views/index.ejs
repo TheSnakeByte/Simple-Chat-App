@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Chat App</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="/favicon.png" alt="Logo" onclick="window.location.href = '/dashboard'" style="cursor: pointer;">
+    <h1 class="headerTitle">Simple Chat App</h1>
+  </header>
+
+  <div class="chat-container">
+    <div class="messages">
+      <p class="sysText" id="sysText">Connecting...</p>
+    </div>
+
+    <div class="input-container">
+      <textarea placeholder="Connecting..." class="message-input" id="messageInput" rows="1" maxlength="800" disabled></textarea>
+      <div class="loading-animation" id="loadingAnimation" style="display: none;"></div>
+      <button class="send-button" id="send-button" onclick="sendMessage()" style="display: none;">Send</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/js/script.js" defer></script>
+</body>
+
+</html>

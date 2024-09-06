@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #171717;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #262626;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #d42c2c;
+  z-index: 1000;
+}
+
+header .headerTitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+header .username {
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: 20px;
+  padding: 0;
+  max-width: 500px;
+  text-overflow: ellipsis;
+  height: 13px;
+  display: flex;
+  align-items: center;
+}
+
+header .profileOptionsButton {
+  font-size: 14px;
+  padding: 4px 7px;
+  background-color: #d42c2c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+header .profileOptionsButton img {
+  border-radius: 50%;
+}
+
+header .profileOptionsButton svg {
+  width: 12px;
+  height: 12px;
+  margin-left: 5px;
+}
+
+.profileOptionsContainer {
+  position: relative;
+}
+
+.profileOptionsMenu {
+  width: 140px;
+  display: none;
+  position: absolute;
+  background-color: #262626;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  padding: 10px;
+  top: 100%;
+  right: 0;
+}
+
+.profileOptionsMenu button {
+  background-color: transparent;
+  color: #bdbdbd;
+  border: 1px solid #262626;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 5px 13px;
+}
+
+.profileOptionsMenu button:hover {
+  background-color: rgba(212, 44, 44, 0.5);
+  color: #ffffff;
+  border: 1px solid rgba(212, 44, 44, 0.5);
+}
+
+header .logo {
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: auto;
+}
+
+/* Chat container styles */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 70px;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.messages {
+  position: relative;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.messages .sysText {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Message styles */
+.messages .messageSent,
+.messages .messageReceived {
+  margin-bottom: 6px; /* Reduce bottom margin to make the gap smaller between messages */
+  padding: 0px 10px;  /* Adjust padding: 5px vertically (top and bottom), 10px horizontally (left and right) */
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+  position: relative;
+}
+
+/* Sent message styles */
+.messages .messageSent {
+  align-self: flex-end;
+  background-color: #d42c2c;
+  color: #ffffff;
+  border: 2px solid transparent; /* No border, just background */
+  margin-left: auto; /* Pushes the message to the right */
+  margin-right: 0; /* Ensure it aligns with the right edge */
+}
+
+/* Received message styles */
+.messages .messageReceived {
+  align-self: flex-start;
+  background-color: #3d3d3d;
+  border: 2px solid #d42c2c; /* Full red border */
+  border-radius: 10px;
+}
+
+/* Input container styles */
+.input-container {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.message-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #3d3d3d;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  resize: none; /* Prevents resizing by the user */
+  overflow-y: auto;
+  max-height: 150px; /* Max height for the input box */
+  line-height: 1.5; /* Line spacing */
+}
+
+.message-input:focus {
+  outline: none;
+  background-color: #4f4f4f;
+}
+
+.send-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: rgba(212, 44, 44, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.send-button:hover {
+  background-color: rgba(212, 44, 44, 1);
+  transform: scale(1.05);
+}
+
+.loading-animation {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  border-top-color: #d42c2c;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
